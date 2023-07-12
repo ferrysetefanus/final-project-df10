@@ -1,0 +1,22 @@
+[2023-07-10 17:58:38,101] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.extract_transform 2023-07-10T17:58:32.930203+00:00 [queued]>
+[2023-07-10 17:58:38,365] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.extract_transform 2023-07-10T17:58:32.930203+00:00 [queued]>
+[2023-07-10 17:58:38,367] {taskinstance.py:1068} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-10 17:58:38,368] {taskinstance.py:1069} INFO - Starting attempt 1 of 1
+[2023-07-10 17:58:38,368] {taskinstance.py:1070} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-10 17:58:38,493] {taskinstance.py:1089} INFO - Executing <Task(_PythonDecoratedOperator): extract_transform> on 2023-07-10T17:58:32.930203+00:00
+[2023-07-10 17:58:38,538] {standard_task_runner.py:52} INFO - Started process 57 to run task
+[2023-07-10 17:58:38,545] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'online_payment_dag', 'extract_transform', '2023-07-10T17:58:32.930203+00:00', '--job-id', '17', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/online_payment_dag.py', '--cfg-path', '/tmp/tmp3zwbau8p', '--error-file', '/tmp/tmphjh2eoup']
+[2023-07-10 17:58:38,547] {standard_task_runner.py:77} INFO - Job 17: Subtask extract_transform
+[2023-07-10 17:58:38,737] {logging_mixin.py:104} INFO - Running <TaskInstance: online_payment_dag.extract_transform 2023-07-10T17:58:32.930203+00:00 [running]> on host e4222cfbfdf4
+[2023-07-10 17:58:38,892] {taskinstance.py:1281} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=datokza@gmail.com
+AIRFLOW_CTX_DAG_OWNER=okza
+AIRFLOW_CTX_DAG_ID=online_payment_dag
+AIRFLOW_CTX_TASK_ID=extract_transform
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-10T17:58:32.930203+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-10T17:58:32.930203+00:00
+[2023-07-10 17:58:38,996] {taskinstance.py:1185} INFO - Marking task as SUCCESS. dag_id=online_payment_dag, task_id=extract_transform, execution_date=20230710T175832, start_date=20230710T175838, end_date=20230710T175838
+[2023-07-10 17:58:39,128] {taskinstance.py:1246} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-07-10 17:58:39,163] {local_task_job.py:146} INFO - Task exited with return code 0

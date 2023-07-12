@@ -1,0 +1,22 @@
+[2023-07-11 17:36:07,218] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.unzip_file 2023-07-11T17:35:06.245725+00:00 [queued]>
+[2023-07-11 17:36:07,265] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.unzip_file 2023-07-11T17:35:06.245725+00:00 [queued]>
+[2023-07-11 17:36:07,266] {taskinstance.py:1068} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-11 17:36:07,267] {taskinstance.py:1069} INFO - Starting attempt 1 of 1
+[2023-07-11 17:36:07,267] {taskinstance.py:1070} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-11 17:36:07,327] {taskinstance.py:1089} INFO - Executing <Task(_PythonDecoratedOperator): unzip_file> on 2023-07-11T17:35:06.245725+00:00
+[2023-07-11 17:36:07,334] {standard_task_runner.py:52} INFO - Started process 88 to run task
+[2023-07-11 17:36:07,339] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'online_payment_dag', 'unzip_file', '2023-07-11T17:35:06.245725+00:00', '--job-id', '20', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/online_payment_dag.py', '--cfg-path', '/tmp/tmpy8pytz83', '--error-file', '/tmp/tmpsc7cdp1g']
+[2023-07-11 17:36:07,341] {standard_task_runner.py:77} INFO - Job 20: Subtask unzip_file
+[2023-07-11 17:36:07,446] {logging_mixin.py:104} INFO - Running <TaskInstance: online_payment_dag.unzip_file 2023-07-11T17:35:06.245725+00:00 [running]> on host 108192df2b59
+[2023-07-11 17:36:07,535] {taskinstance.py:1281} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=datokza@gmail.com
+AIRFLOW_CTX_DAG_OWNER=okza
+AIRFLOW_CTX_DAG_ID=online_payment_dag
+AIRFLOW_CTX_TASK_ID=unzip_file
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-11T17:35:06.245725+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-11T17:35:06.245725+00:00
+[2023-07-11 17:36:27,202] {taskinstance.py:1185} INFO - Marking task as SUCCESS. dag_id=online_payment_dag, task_id=unzip_file, execution_date=20230711T173506, start_date=20230711T173607, end_date=20230711T173627
+[2023-07-11 17:36:27,692] {taskinstance.py:1246} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-07-11 17:36:27,719] {local_task_job.py:146} INFO - Task exited with return code 0

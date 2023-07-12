@@ -1,0 +1,130 @@
+[2023-07-10 18:17:21,243] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.load_to_bigquery 2023-07-10T18:17:09.053991+00:00 [queued]>
+[2023-07-10 18:17:21,431] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.load_to_bigquery 2023-07-10T18:17:09.053991+00:00 [queued]>
+[2023-07-10 18:17:21,432] {taskinstance.py:1068} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-10 18:17:21,433] {taskinstance.py:1069} INFO - Starting attempt 1 of 1
+[2023-07-10 18:17:21,434] {taskinstance.py:1070} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-10 18:17:21,550] {taskinstance.py:1089} INFO - Executing <Task(GCSToBigQueryOperator): load_to_bigquery> on 2023-07-10T18:17:09.053991+00:00
+[2023-07-10 18:17:21,559] {standard_task_runner.py:52} INFO - Started process 81 to run task
+[2023-07-10 18:17:21,565] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'online_payment_dag', 'load_to_bigquery', '2023-07-10T18:17:09.053991+00:00', '--job-id', '25', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/online_payment_dag.py', '--cfg-path', '/tmp/tmpljf_ra7x', '--error-file', '/tmp/tmp8wa7t1zu']
+[2023-07-10 18:17:21,566] {standard_task_runner.py:77} INFO - Job 25: Subtask load_to_bigquery
+[2023-07-10 18:17:21,726] {logging_mixin.py:104} INFO - Running <TaskInstance: online_payment_dag.load_to_bigquery 2023-07-10T18:17:09.053991+00:00 [running]> on host e4222cfbfdf4
+[2023-07-10 18:17:21,814] {taskinstance.py:1281} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=datokza@gmail.com
+AIRFLOW_CTX_DAG_OWNER=okza
+AIRFLOW_CTX_DAG_ID=online_payment_dag
+AIRFLOW_CTX_TASK_ID=load_to_bigquery
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-10T18:17:09.053991+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-10T18:17:09.053991+00:00
+[2023-07-10 18:17:21,822] {logging_mixin.py:104} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py:262 DeprecationWarning: The bigquery_conn_id parameter has been deprecated. You should pass the gcp_conn_id parameter.
+[2023-07-10 18:17:21,834] {logging_mixin.py:104} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/bigquery.py:121 DeprecationWarning: This method will be deprecated. Please use `BigQueryHook.get_client` method
+[2023-07-10 18:17:22,150] {logging_mixin.py:104} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py:1341 DeprecationWarning: This method is deprecated. Please use `airflow.providers.google.cloud.hooks.bigquery.BigQueryHook.run_load`
+[2023-07-10 18:17:22,152] {logging_mixin.py:104} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/bigquery.py:1658 DeprecationWarning: This method is deprecated. Please use `BigQueryHook.insert_job` method.
+[2023-07-10 18:17:22,152] {bigquery.py:2894} INFO - Project not included in destination_project_dataset_table: airflow_orchestration.bs_disaster; using project "ethereal-icon-391211"
+[2023-07-10 18:17:22,154] {bigquery.py:1524} INFO - Inserting job airflow_1689013042153413_9716d344be2526400c91c43a55755fec
+[2023-07-10 18:17:23,896] {taskinstance.py:1482} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1138, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1311, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1341, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 316, in execute
+    cursor.run_load(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 2573, in run_load
+    return self.hook.run_load(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1806, in run_load
+    job = self.insert_job(configuration=configuration, project_id=self.project_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/common/hooks/base_google.py", line 425, in inner_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1526, in insert_job
+    job.result()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job.py", line 835, in result
+    return super(_AsyncJob, self).result(timeout=timeout)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/future/polling.py", line 134, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 Error while reading data, error message: Could not parse '170136.0' as INT64 for field oldbalanceOrg (position 4) starting at location 0  with message 'Unable to parse' File: gs://airflowdf/extract_disaster_data.csv
+[2023-07-10 18:17:23,902] {taskinstance.py:1525} INFO - Marking task as FAILED. dag_id=online_payment_dag, task_id=load_to_bigquery, execution_date=20230710T181709, start_date=20230710T181721, end_date=20230710T181723
+[2023-07-10 18:17:23,925] {configuration.py:352} WARNING - section/key [smtp/smtp_user] not found in config
+[2023-07-10 18:17:23,925] {email.py:184} INFO - Email alerting: attempt 1
+[2023-07-10 18:17:23,927] {configuration.py:352} WARNING - section/key [smtp/smtp_user] not found in config
+[2023-07-10 18:17:23,928] {email.py:184} INFO - Email alerting: attempt 1
+[2023-07-10 18:17:23,928] {taskinstance.py:1538} ERROR - Failed to send email to: datokza@gmail.com
+[2023-07-10 18:17:23,929] {taskinstance.py:1539} ERROR - [Errno 99] Cannot assign requested address
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1138, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1311, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1341, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py", line 316, in execute
+    cursor.run_load(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 2573, in run_load
+    return self.hook.run_load(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1806, in run_load
+    job = self.insert_job(configuration=configuration, project_id=self.project_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/common/hooks/base_google.py", line 425, in inner_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 1526, in insert_job
+    job.result()
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/cloud/bigquery/job.py", line 835, in result
+    return super(_AsyncJob, self).result(timeout=timeout)
+  File "/home/airflow/.local/lib/python3.8/site-packages/google/api_core/future/polling.py", line 134, in result
+    raise self._exception
+google.api_core.exceptions.BadRequest: 400 Error while reading data, error message: Could not parse '170136.0' as INT64 for field oldbalanceOrg (position 4) starting at location 0  with message 'Unable to parse' File: gs://airflowdf/extract_disaster_data.csv
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1881, in email_alert
+    send_email(self.task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 52, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 97, in send_email_smtp
+    send_mime_email(e_from=smtp_mail_from, e_to=recipients, mime_msg=msg, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 186, in send_mime_email
+    conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 220, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.8/smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 310, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/local/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1536, in handle_failure
+    self.email_alert(error)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1883, in email_alert
+    send_email(self.task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 52, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 97, in send_email_smtp
+    send_mime_email(e_from=smtp_mail_from, e_to=recipients, mime_msg=msg, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 186, in send_mime_email
+    conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 220, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.8/smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 310, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/local/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+[2023-07-10 18:17:25,156] {local_task_job.py:146} INFO - Task exited with return code 1

@@ -1,0 +1,116 @@
+[2023-07-10 17:57:12,541] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.store_to_gcs 2023-07-10T17:56:58.440897+00:00 [queued]>
+[2023-07-10 17:57:12,637] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.store_to_gcs 2023-07-10T17:56:58.440897+00:00 [queued]>
+[2023-07-10 17:57:12,639] {taskinstance.py:1068} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-10 17:57:12,640] {taskinstance.py:1069} INFO - Starting attempt 1 of 1
+[2023-07-10 17:57:12,641] {taskinstance.py:1070} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-10 17:57:12,825] {taskinstance.py:1089} INFO - Executing <Task(LocalFilesystemToGCSOperator): store_to_gcs> on 2023-07-10T17:56:58.440897+00:00
+[2023-07-10 17:57:12,839] {standard_task_runner.py:52} INFO - Started process 54 to run task
+[2023-07-10 17:57:12,850] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'online_payment_dag', 'store_to_gcs', '2023-07-10T17:56:58.440897+00:00', '--job-id', '16', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/online_payment_dag.py', '--cfg-path', '/tmp/tmpc9mtu1mz', '--error-file', '/tmp/tmp_ou2k0wx']
+[2023-07-10 17:57:12,853] {standard_task_runner.py:77} INFO - Job 16: Subtask store_to_gcs
+[2023-07-10 17:57:13,168] {logging_mixin.py:104} INFO - Running <TaskInstance: online_payment_dag.store_to_gcs 2023-07-10T17:56:58.440897+00:00 [running]> on host e4222cfbfdf4
+[2023-07-10 17:57:13,411] {taskinstance.py:1281} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=datokza@gmail.com
+AIRFLOW_CTX_DAG_OWNER=okza
+AIRFLOW_CTX_DAG_ID=online_payment_dag
+AIRFLOW_CTX_TASK_ID=store_to_gcs
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-10T17:56:58.440897+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-10T17:56:58.440897+00:00
+[2023-07-10 17:57:13,450] {taskinstance.py:1482} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1138, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1311, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1341, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/transfers/local_to_gcs.py", line 113, in execute
+    hook = GCSHook(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 141, in __init__
+    super().__init__(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/common/hooks/base_google.py", line 211, in __init__
+    self.extras = self.get_connection(self.gcp_conn_id).extra_dejson  # type: Dict
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/base.py", line 67, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/connection.py", line 354, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `gcp_id` isn't defined
+[2023-07-10 17:57:13,456] {taskinstance.py:1525} INFO - Marking task as FAILED. dag_id=online_payment_dag, task_id=store_to_gcs, execution_date=20230710T175658, start_date=20230710T175712, end_date=20230710T175713
+[2023-07-10 17:57:13,489] {configuration.py:352} WARNING - section/key [smtp/smtp_user] not found in config
+[2023-07-10 17:57:13,490] {email.py:184} INFO - Email alerting: attempt 1
+[2023-07-10 17:57:13,492] {configuration.py:352} WARNING - section/key [smtp/smtp_user] not found in config
+[2023-07-10 17:57:13,493] {email.py:184} INFO - Email alerting: attempt 1
+[2023-07-10 17:57:13,494] {taskinstance.py:1538} ERROR - Failed to send email to: datokza@gmail.com
+[2023-07-10 17:57:13,494] {taskinstance.py:1539} ERROR - [Errno 99] Cannot assign requested address
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1138, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1311, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1341, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/transfers/local_to_gcs.py", line 113, in execute
+    hook = GCSHook(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/gcs.py", line 141, in __init__
+    super().__init__(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/common/hooks/base_google.py", line 211, in __init__
+    self.extras = self.get_connection(self.gcp_conn_id).extra_dejson  # type: Dict
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/base.py", line 67, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/connection.py", line 354, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `gcp_id` isn't defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1881, in email_alert
+    send_email(self.task.email, subject, html_content)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 52, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 97, in send_email_smtp
+    send_mime_email(e_from=smtp_mail_from, e_to=recipients, mime_msg=msg, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 186, in send_mime_email
+    conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 220, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.8/smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 310, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/local/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1536, in handle_failure
+    self.email_alert(error)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 1883, in email_alert
+    send_email(self.task.email, subject, html_content_err)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 52, in send_email
+    return backend(
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 97, in send_email_smtp
+    send_mime_email(e_from=smtp_mail_from, e_to=recipients, mime_msg=msg, dryrun=dryrun)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 186, in send_mime_email
+    conn = _get_smtp_connection(smtp_host, smtp_port, smtp_timeout, smtp_ssl)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/utils/email.py", line 220, in _get_smtp_connection
+    else smtplib.SMTP(host=host, port=port, timeout=timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+  File "/usr/local/lib/python3.8/smtplib.py", line 339, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+  File "/usr/local/lib/python3.8/smtplib.py", line 310, in _get_socket
+    return socket.create_connection((host, port), timeout,
+  File "/usr/local/lib/python3.8/socket.py", line 808, in create_connection
+    raise err
+  File "/usr/local/lib/python3.8/socket.py", line 796, in create_connection
+    sock.connect(sa)
+OSError: [Errno 99] Cannot assign requested address
+[2023-07-10 17:57:13,639] {local_task_job.py:146} INFO - Task exited with return code 1

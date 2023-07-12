@@ -1,0 +1,28 @@
+[2023-07-10 18:38:47,328] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.load_to_bigquery 2023-07-10T18:38:28.890905+00:00 [queued]>
+[2023-07-10 18:38:47,371] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.load_to_bigquery 2023-07-10T18:38:28.890905+00:00 [queued]>
+[2023-07-10 18:38:47,372] {taskinstance.py:1068} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-10 18:38:47,373] {taskinstance.py:1069} INFO - Starting attempt 1 of 1
+[2023-07-10 18:38:47,373] {taskinstance.py:1070} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-10 18:38:47,438] {taskinstance.py:1089} INFO - Executing <Task(GCSToBigQueryOperator): load_to_bigquery> on 2023-07-10T18:38:28.890905+00:00
+[2023-07-10 18:38:47,445] {standard_task_runner.py:52} INFO - Started process 99 to run task
+[2023-07-10 18:38:47,450] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'online_payment_dag', 'load_to_bigquery', '2023-07-10T18:38:28.890905+00:00', '--job-id', '31', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/online_payment_dag.py', '--cfg-path', '/tmp/tmp8_diyl_g', '--error-file', '/tmp/tmpca5kzfdi']
+[2023-07-10 18:38:47,451] {standard_task_runner.py:77} INFO - Job 31: Subtask load_to_bigquery
+[2023-07-10 18:38:47,547] {logging_mixin.py:104} INFO - Running <TaskInstance: online_payment_dag.load_to_bigquery 2023-07-10T18:38:28.890905+00:00 [running]> on host e4222cfbfdf4
+[2023-07-10 18:38:47,657] {taskinstance.py:1281} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=datokza@gmail.com
+AIRFLOW_CTX_DAG_OWNER=okza
+AIRFLOW_CTX_DAG_ID=online_payment_dag
+AIRFLOW_CTX_TASK_ID=load_to_bigquery
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-10T18:38:28.890905+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-10T18:38:28.890905+00:00
+[2023-07-10 18:38:47,671] {logging_mixin.py:104} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/transfers/gcs_to_bigquery.py:262 DeprecationWarning: The bigquery_conn_id parameter has been deprecated. You should pass the gcp_conn_id parameter.
+[2023-07-10 18:38:47,687] {logging_mixin.py:104} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/bigquery.py:121 DeprecationWarning: This method will be deprecated. Please use `BigQueryHook.get_client` method
+[2023-07-10 18:38:48,020] {logging_mixin.py:104} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py:1341 DeprecationWarning: This method is deprecated. Please use `airflow.providers.google.cloud.hooks.bigquery.BigQueryHook.run_load`
+[2023-07-10 18:38:48,022] {logging_mixin.py:104} WARNING - /home/airflow/.local/lib/python3.8/site-packages/airflow/providers/google/cloud/hooks/bigquery.py:1658 DeprecationWarning: This method is deprecated. Please use `BigQueryHook.insert_job` method.
+[2023-07-10 18:38:48,023] {bigquery.py:2894} INFO - Project not included in destination_project_dataset_table: airflow_orchestration.bs_disaster; using project "ethereal-icon-391211"
+[2023-07-10 18:38:48,024] {bigquery.py:1524} INFO - Inserting job airflow_1689014328023959_63b791694bdb207c920012c96f39ac8d
+[2023-07-10 18:38:51,239] {taskinstance.py:1185} INFO - Marking task as SUCCESS. dag_id=online_payment_dag, task_id=load_to_bigquery, execution_date=20230710T183828, start_date=20230710T183847, end_date=20230710T183851
+[2023-07-10 18:38:51,350] {taskinstance.py:1246} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-07-10 18:38:51,367] {local_task_job.py:146} INFO - Task exited with return code 0

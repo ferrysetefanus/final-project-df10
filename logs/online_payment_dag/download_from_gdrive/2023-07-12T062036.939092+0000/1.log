@@ -1,0 +1,154 @@
+[2023-07-12 06:20:44,138] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.download_from_gdrive 2023-07-12T06:20:36.939092+00:00 [queued]>
+[2023-07-12 06:20:44,260] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.download_from_gdrive 2023-07-12T06:20:36.939092+00:00 [queued]>
+[2023-07-12 06:20:44,261] {taskinstance.py:1068} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-12 06:20:44,261] {taskinstance.py:1069} INFO - Starting attempt 1 of 1
+[2023-07-12 06:20:44,261] {taskinstance.py:1070} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-12 06:20:44,373] {taskinstance.py:1089} INFO - Executing <Task(_PythonDecoratedOperator): download_from_gdrive> on 2023-07-12T06:20:36.939092+00:00
+[2023-07-12 06:20:44,382] {standard_task_runner.py:52} INFO - Started process 44 to run task
+[2023-07-12 06:20:44,385] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'online_payment_dag', 'download_from_gdrive', '2023-07-12T06:20:36.939092+00:00', '--job-id', '34', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/online_payment_dag.py', '--cfg-path', '/tmp/tmpi0k9s8ag', '--error-file', '/tmp/tmp6tbih3q5']
+[2023-07-12 06:20:44,387] {standard_task_runner.py:77} INFO - Job 34: Subtask download_from_gdrive
+[2023-07-12 06:20:44,502] {logging_mixin.py:104} INFO - Running <TaskInstance: online_payment_dag.download_from_gdrive 2023-07-12T06:20:36.939092+00:00 [running]> on host a5b832011b5f
+[2023-07-12 06:20:44,592] {taskinstance.py:1281} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=datokza@gmail.com
+AIRFLOW_CTX_DAG_OWNER=okza
+AIRFLOW_CTX_DAG_ID=online_payment_dag
+AIRFLOW_CTX_TASK_ID=download_from_gdrive
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-12T06:20:36.939092+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-12T06:20:36.939092+00:00
+[2023-07-12 06:20:47,329] {logging_mixin.py:104} WARNING - Downloading...
+[2023-07-12 06:20:47,329] {logging_mixin.py:104} WARNING - From: https://drive.google.com/u/0/uc?id=1ZMBiOBTk-KnVJEegdqfk3pLgmccnUiTF&confirm=t
+[2023-07-12 06:20:47,330] {logging_mixin.py:104} WARNING - To: /opt/airflow/data/online_payment.zip
+[2023-07-12 06:20:47,337] {logging_mixin.py:104} WARNING -   0%|          | 0.00/186M [00:00<?, ?B/s]
+[2023-07-12 06:20:47,474] {logging_mixin.py:104} WARNING -   0%|          | 524k/186M [00:00<00:46, 4.04MB/s]
+[2023-07-12 06:20:47,666] {logging_mixin.py:104} WARNING -   1%|          | 1.05M/186M [00:00<00:58, 3.15MB/s]
+[2023-07-12 06:20:47,806] {logging_mixin.py:104} WARNING -   1%|1         | 2.62M/186M [00:00<00:28, 6.51MB/s]
+[2023-07-12 06:20:47,928] {logging_mixin.py:104} WARNING -   2%|1         | 3.67M/186M [00:00<00:25, 7.22MB/s]
+[2023-07-12 06:20:48,046] {logging_mixin.py:104} WARNING -   3%|2         | 5.24M/186M [00:00<00:19, 9.16MB/s]
+[2023-07-12 06:20:48,200] {logging_mixin.py:104} WARNING -   4%|3         | 6.82M/186M [00:00<00:18, 9.57MB/s]
+[2023-07-12 06:20:48,365] {logging_mixin.py:104} WARNING -   5%|4         | 8.39M/186M [00:01<00:18, 9.55MB/s]
+[2023-07-12 06:20:50,312] {logging_mixin.py:104} WARNING -   5%|5         | 9.44M/186M [00:02<01:38, 1.80MB/s]
+[2023-07-12 06:20:50,767] {logging_mixin.py:104} WARNING -   6%|5         | 10.5M/186M [00:03<01:31, 1.91MB/s]
+[2023-07-12 06:20:50,874] {logging_mixin.py:104} WARNING -   7%|7         | 13.1M/186M [00:03<00:49, 3.49MB/s]
+[2023-07-12 06:20:51,017] {logging_mixin.py:104} WARNING -   8%|7         | 14.7M/186M [00:03<00:39, 4.37MB/s]
+[2023-07-12 06:20:51,220] {logging_mixin.py:104} WARNING -   9%|8         | 16.3M/186M [00:03<00:33, 5.02MB/s]
+[2023-07-12 06:20:51,371] {logging_mixin.py:104} WARNING -   9%|9         | 17.3M/186M [00:04<00:31, 5.34MB/s]
+[2023-07-12 06:20:51,483] {logging_mixin.py:104} WARNING -  10%|9         | 18.4M/186M [00:04<00:28, 5.95MB/s]
+[2023-07-12 06:20:51,723] {logging_mixin.py:104} WARNING -  10%|#         | 19.4M/186M [00:04<00:30, 5.46MB/s]
+[2023-07-12 06:20:51,867] {logging_mixin.py:104} WARNING -  11%|#         | 20.4M/186M [00:04<00:28, 5.85MB/s]
+[2023-07-12 06:20:52,017] {logging_mixin.py:104} WARNING -  12%|#1        | 21.5M/186M [00:04<00:26, 6.12MB/s]
+[2023-07-12 06:20:52,242] {logging_mixin.py:104} WARNING -  12%|#2        | 22.5M/186M [00:04<00:29, 5.62MB/s]
+[2023-07-12 06:20:52,346] {logging_mixin.py:104} WARNING -  13%|#2        | 23.6M/186M [00:05<00:25, 6.45MB/s]
+[2023-07-12 06:20:52,477] {logging_mixin.py:104} WARNING -  13%|#3        | 24.6M/186M [00:05<00:23, 6.83MB/s]
+[2023-07-12 06:20:52,668] {logging_mixin.py:104} WARNING -  14%|#4        | 26.2M/186M [00:05<00:21, 7.31MB/s]
+[2023-07-12 06:20:52,774] {logging_mixin.py:104} WARNING -  15%|#4        | 27.3M/186M [00:05<00:20, 7.85MB/s]
+[2023-07-12 06:20:52,902] {logging_mixin.py:104} WARNING -  15%|#5        | 28.8M/186M [00:05<00:17, 9.05MB/s]
+[2023-07-12 06:20:54,070] {logging_mixin.py:104} WARNING -  16%|#6        | 29.9M/186M [00:06<00:57, 2.71MB/s]
+[2023-07-12 06:20:54,173] {logging_mixin.py:104} WARNING -  19%|#8        | 34.6M/186M [00:06<00:23, 6.56MB/s]
+[2023-07-12 06:20:54,330] {logging_mixin.py:104} WARNING -  20%|#9        | 36.7M/186M [00:06<00:19, 7.66MB/s]
+[2023-07-12 06:20:54,464] {logging_mixin.py:104} WARNING -  21%|##        | 38.8M/186M [00:07<00:16, 8.99MB/s]
+[2023-07-12 06:20:54,707] {logging_mixin.py:104} WARNING -  22%|##1       | 40.9M/186M [00:07<00:16, 8.88MB/s]
+[2023-07-12 06:20:54,896] {logging_mixin.py:104} WARNING -  23%|##2       | 42.5M/186M [00:07<00:16, 8.74MB/s]
+[2023-07-12 06:20:55,018] {logging_mixin.py:104} WARNING -  24%|##3       | 44.0M/186M [00:07<00:14, 9.52MB/s]
+[2023-07-12 06:20:55,208] {logging_mixin.py:104} WARNING -  24%|##4       | 45.6M/186M [00:07<00:15, 9.15MB/s]
+[2023-07-12 06:20:55,530] {logging_mixin.py:104} WARNING -  25%|##5       | 47.2M/186M [00:08<00:18, 7.38MB/s]
+[2023-07-12 06:20:55,745] {logging_mixin.py:104} WARNING -  26%|##5       | 48.2M/186M [00:08<00:20, 6.66MB/s]
+[2023-07-12 06:20:55,863] {logging_mixin.py:104} WARNING -  26%|##6       | 49.3M/186M [00:08<00:19, 7.07MB/s]
+[2023-07-12 06:20:55,978] {logging_mixin.py:104} WARNING -  27%|##7       | 50.3M/186M [00:08<00:18, 7.48MB/s]
+[2023-07-12 06:20:56,081] {logging_mixin.py:104} WARNING -  28%|##7       | 51.4M/186M [00:08<00:16, 8.05MB/s]
+[2023-07-12 06:20:56,200] {logging_mixin.py:104} WARNING -  28%|##8       | 52.4M/186M [00:08<00:16, 8.24MB/s]
+[2023-07-12 06:20:56,329] {logging_mixin.py:104} WARNING -  29%|##8       | 53.5M/186M [00:08<00:16, 8.21MB/s]
+[2023-07-12 06:20:56,430] {logging_mixin.py:104} WARNING -  29%|##9       | 54.5M/186M [00:09<00:15, 8.73MB/s]
+[2023-07-12 06:20:56,533] {logging_mixin.py:104} WARNING -  30%|##9       | 55.6M/186M [00:09<00:14, 9.11MB/s]
+[2023-07-12 06:20:56,636] {logging_mixin.py:104} WARNING -  30%|###       | 56.6M/186M [00:09<00:13, 9.39MB/s]
+[2023-07-12 06:20:56,740] {logging_mixin.py:104} WARNING -  31%|###       | 57.7M/186M [00:09<00:13, 9.60MB/s]
+[2023-07-12 06:20:56,848] {logging_mixin.py:104} WARNING -  32%|###1      | 58.7M/186M [00:09<00:13, 9.61MB/s]
+[2023-07-12 06:20:56,953] {logging_mixin.py:104} WARNING -  32%|###2      | 59.8M/186M [00:09<00:12, 9.77MB/s]
+[2023-07-12 06:20:57,248] {logging_mixin.py:104} WARNING -  33%|###2      | 61.3M/186M [00:09<00:16, 7.36MB/s]
+[2023-07-12 06:20:58,796] {logging_mixin.py:104} WARNING -  33%|###3      | 62.4M/186M [00:11<01:01, 2.01MB/s]
+[2023-07-12 06:20:59,294] {logging_mixin.py:104} WARNING -  34%|###4      | 63.4M/186M [00:11<01:00, 2.03MB/s]
+[2023-07-12 06:20:59,398] {logging_mixin.py:104} WARNING -  36%|###6      | 67.1M/186M [00:12<00:26, 4.50MB/s]
+[2023-07-12 06:20:59,540] {logging_mixin.py:104} WARNING -  37%|###6      | 68.7M/186M [00:12<00:22, 5.34MB/s]
+[2023-07-12 06:21:00,096] {logging_mixin.py:104} WARNING -  38%|###7      | 70.3M/186M [00:12<00:27, 4.30MB/s]
+[2023-07-12 06:21:00,200] {logging_mixin.py:104} WARNING -  39%|###8      | 72.4M/186M [00:12<00:19, 5.88MB/s]
+[2023-07-12 06:21:00,400] {logging_mixin.py:104} WARNING -  40%|###9      | 73.9M/186M [00:13<00:17, 6.30MB/s]
+[2023-07-12 06:21:00,613] {logging_mixin.py:104} WARNING -  41%|####      | 75.5M/186M [00:13<00:16, 6.57MB/s]
+[2023-07-12 06:21:00,754] {logging_mixin.py:104} WARNING -  41%|####1     | 76.5M/186M [00:13<00:16, 6.73MB/s]
+[2023-07-12 06:21:00,902] {logging_mixin.py:104} WARNING -  42%|####1     | 77.6M/186M [00:13<00:15, 6.81MB/s]
+[2023-07-12 06:21:01,035] {logging_mixin.py:104} WARNING -  42%|####2     | 78.6M/186M [00:13<00:15, 7.05MB/s]
+[2023-07-12 06:21:01,177] {logging_mixin.py:104} WARNING -  43%|####2     | 79.7M/186M [00:13<00:14, 7.14MB/s]
+[2023-07-12 06:21:01,331] {logging_mixin.py:104} WARNING -  43%|####3     | 80.7M/186M [00:13<00:15, 7.04MB/s]
+[2023-07-12 06:21:01,516] {logging_mixin.py:104} WARNING -  44%|####3     | 81.8M/186M [00:14<00:15, 6.60MB/s]
+[2023-07-12 06:21:01,634] {logging_mixin.py:104} WARNING -  44%|####4     | 82.8M/186M [00:14<00:14, 7.13MB/s]
+[2023-07-12 06:21:01,756] {logging_mixin.py:104} WARNING -  45%|####5     | 83.9M/186M [00:14<00:13, 7.49MB/s]
+[2023-07-12 06:21:01,879] {logging_mixin.py:104} WARNING -  46%|####5     | 84.9M/186M [00:14<00:13, 7.77MB/s]
+[2023-07-12 06:21:02,042] {logging_mixin.py:104} WARNING -  46%|####6     | 86.0M/186M [00:14<00:13, 7.32MB/s]
+[2023-07-12 06:21:02,190] {logging_mixin.py:104} WARNING -  47%|####6     | 87.6M/186M [00:14<00:11, 8.31MB/s]
+[2023-07-12 06:21:02,355] {logging_mixin.py:104} WARNING -  48%|####7     | 88.6M/186M [00:15<00:12, 7.69MB/s]
+[2023-07-12 06:21:02,477] {logging_mixin.py:104} WARNING -  48%|####8     | 89.7M/186M [00:15<00:12, 7.91MB/s]
+[2023-07-12 06:21:02,975] {logging_mixin.py:104} WARNING -  49%|####8     | 90.7M/186M [00:15<00:21, 4.44MB/s]
+[2023-07-12 06:21:03,096] {logging_mixin.py:104} WARNING -  51%|#####1    | 95.9M/186M [00:15<00:08, 11.1MB/s]
+[2023-07-12 06:21:03,297] {logging_mixin.py:104} WARNING -  53%|#####2    | 98.0M/186M [00:15<00:08, 10.9MB/s]
+[2023-07-12 06:21:03,436] {logging_mixin.py:104} WARNING -  53%|#####3    | 99.6M/186M [00:16<00:07, 11.0MB/s]
+[2023-07-12 06:21:03,645] {logging_mixin.py:104} WARNING -  54%|#####4    | 101M/186M [00:16<00:08, 9.88MB/s] 
+[2023-07-12 06:21:04,011] {logging_mixin.py:104} WARNING -  55%|#####5    | 103M/186M [00:16<00:11, 7.39MB/s]
+[2023-07-12 06:21:04,132] {logging_mixin.py:104} WARNING -  57%|#####6    | 105M/186M [00:16<00:08, 9.87MB/s]
+[2023-07-12 06:21:04,359] {logging_mixin.py:104} WARNING -  57%|#####7    | 107M/186M [00:17<00:08, 8.93MB/s]
+[2023-07-12 06:21:04,546] {logging_mixin.py:104} WARNING -  58%|#####8    | 109M/186M [00:17<00:08, 8.79MB/s]
+[2023-07-12 06:21:04,724] {logging_mixin.py:104} WARNING -  59%|#####9    | 110M/186M [00:17<00:08, 8.80MB/s]
+[2023-07-12 06:21:04,845] {logging_mixin.py:104} WARNING -  60%|#####9    | 111M/186M [00:17<00:08, 8.78MB/s]
+[2023-07-12 06:21:04,948] {logging_mixin.py:104} WARNING -  60%|######    | 112M/186M [00:17<00:08, 9.05MB/s]
+[2023-07-12 06:21:05,052] {logging_mixin.py:104} WARNING -  61%|######    | 113M/186M [00:17<00:07, 9.30MB/s]
+[2023-07-12 06:21:05,512] {logging_mixin.py:104} WARNING -  61%|######1   | 114M/186M [00:18<00:13, 5.17MB/s]
+[2023-07-12 06:21:05,652] {logging_mixin.py:104} WARNING -  63%|######2   | 117M/186M [00:18<00:08, 7.94MB/s]
+[2023-07-12 06:21:05,840] {logging_mixin.py:104} WARNING -  64%|######3   | 118M/186M [00:18<00:08, 8.06MB/s]
+[2023-07-12 06:21:05,956] {logging_mixin.py:104} WARNING -  64%|######4   | 120M/186M [00:18<00:08, 8.24MB/s]
+[2023-07-12 06:21:06,134] {logging_mixin.py:104} WARNING -  65%|######4   | 121M/186M [00:18<00:08, 7.55MB/s]
+[2023-07-12 06:21:06,263] {logging_mixin.py:104} WARNING -  65%|######5   | 122M/186M [00:18<00:08, 7.68MB/s]
+[2023-07-12 06:21:06,388] {logging_mixin.py:104} WARNING -  66%|######5   | 123M/186M [00:19<00:08, 7.85MB/s]
+[2023-07-12 06:21:06,531] {logging_mixin.py:104} WARNING -  66%|######6   | 124M/186M [00:19<00:08, 7.69MB/s]
+[2023-07-12 06:21:06,648] {logging_mixin.py:104} WARNING -  67%|######6   | 125M/186M [00:19<00:07, 8.02MB/s]
+[2023-07-12 06:21:06,806] {logging_mixin.py:104} WARNING -  68%|######7   | 126M/186M [00:19<00:07, 7.57MB/s]
+[2023-07-12 06:21:06,950] {logging_mixin.py:104} WARNING -  68%|######8   | 127M/186M [00:19<00:06, 8.57MB/s]
+[2023-07-12 06:21:07,070] {logging_mixin.py:104} WARNING -  69%|######8   | 128M/186M [00:19<00:06, 8.62MB/s]
+[2023-07-12 06:21:07,218] {logging_mixin.py:104} WARNING -  70%|######9   | 130M/186M [00:19<00:06, 9.24MB/s]
+[2023-07-12 06:21:07,348] {logging_mixin.py:104} WARNING -  70%|#######   | 131M/186M [00:20<00:06, 8.92MB/s]
+[2023-07-12 06:21:07,468] {logging_mixin.py:104} WARNING -  71%|#######   | 132M/186M [00:20<00:06, 8.88MB/s]
+[2023-07-12 06:21:07,593] {logging_mixin.py:104} WARNING -  71%|#######1  | 133M/186M [00:20<00:06, 8.75MB/s]
+[2023-07-12 06:21:07,820] {logging_mixin.py:104} WARNING -  72%|#######2  | 134M/186M [00:20<00:07, 6.99MB/s]
+[2023-07-12 06:21:07,928] {logging_mixin.py:104} WARNING -  73%|#######2  | 135M/186M [00:20<00:06, 7.58MB/s]
+[2023-07-12 06:21:08,194] {logging_mixin.py:104} WARNING -  73%|#######3  | 136M/186M [00:20<00:08, 5.97MB/s]
+[2023-07-12 06:21:08,344] {logging_mixin.py:104} WARNING -  74%|#######3  | 137M/186M [00:20<00:07, 6.24MB/s]
+[2023-07-12 06:21:08,447] {logging_mixin.py:104} WARNING -  74%|#######4  | 138M/186M [00:21<00:06, 7.05MB/s]
+[2023-07-12 06:21:08,580] {logging_mixin.py:104} WARNING -  75%|#######4  | 139M/186M [00:21<00:06, 7.27MB/s]
+[2023-07-12 06:21:08,682] {logging_mixin.py:104} WARNING -  75%|#######5  | 141M/186M [00:21<00:05, 7.97MB/s]
+[2023-07-12 06:21:08,796] {logging_mixin.py:104} WARNING -  76%|#######5  | 142M/186M [00:21<00:05, 8.30MB/s]
+[2023-07-12 06:21:08,922] {logging_mixin.py:104} WARNING -  77%|#######6  | 143M/186M [00:21<00:05, 8.31MB/s]
+[2023-07-12 06:21:09,049] {logging_mixin.py:104} WARNING -  77%|#######7  | 144M/186M [00:21<00:05, 8.29MB/s]
+[2023-07-12 06:21:09,521] {logging_mixin.py:104} WARNING -  78%|#######7  | 145M/186M [00:22<00:09, 4.56MB/s]
+[2023-07-12 06:21:09,703] {logging_mixin.py:104} WARNING -  80%|#######9  | 148M/186M [00:22<00:04, 8.51MB/s]
+[2023-07-12 06:21:09,899] {logging_mixin.py:104} WARNING -  80%|########  | 150M/186M [00:22<00:04, 8.37MB/s]
+[2023-07-12 06:21:10,022] {logging_mixin.py:104} WARNING -  81%|########1 | 151M/186M [00:22<00:04, 8.41MB/s]
+[2023-07-12 06:21:10,144] {logging_mixin.py:104} WARNING -  82%|########1 | 152M/186M [00:22<00:04, 8.45MB/s]
+[2023-07-12 06:21:11,254] {logging_mixin.py:104} WARNING -  82%|########2 | 153M/186M [00:23<00:11, 2.88MB/s]
+[2023-07-12 06:21:11,669] {logging_mixin.py:104} WARNING -  83%|########2 | 154M/186M [00:24<00:11, 2.78MB/s]
+[2023-07-12 06:21:11,778] {logging_mixin.py:104} WARNING -  85%|########4 | 158M/186M [00:24<00:04, 6.22MB/s]
+[2023-07-12 06:21:11,931] {logging_mixin.py:104} WARNING -  86%|########5 | 160M/186M [00:24<00:03, 6.87MB/s]
+[2023-07-12 06:21:12,629] {logging_mixin.py:104} WARNING -  87%|########6 | 161M/186M [00:25<00:05, 4.50MB/s]
+[2023-07-12 06:21:12,774] {logging_mixin.py:104} WARNING -  88%|########8 | 165M/186M [00:25<00:03, 6.77MB/s]
+[2023-07-12 06:21:13,016] {logging_mixin.py:104} WARNING -  89%|########9 | 166M/186M [00:25<00:03, 6.71MB/s]
+[2023-07-12 06:21:13,291] {logging_mixin.py:104} WARNING -  90%|######### | 168M/186M [00:25<00:02, 6.43MB/s]
+[2023-07-12 06:21:14,236] {logging_mixin.py:104} WARNING -  91%|######### | 169M/186M [00:26<00:05, 3.35MB/s]
+[2023-07-12 06:21:14,767] {logging_mixin.py:104} WARNING -  91%|#########1| 170M/186M [00:27<00:05, 2.91MB/s]
+[2023-07-12 06:21:14,880] {logging_mixin.py:104} WARNING -  92%|#########1| 171M/186M [00:27<00:04, 3.47MB/s]
+[2023-07-12 06:21:15,041] {logging_mixin.py:104} WARNING -  95%|#########4| 177M/186M [00:27<00:01, 8.39MB/s]
+[2023-07-12 06:21:15,558] {logging_mixin.py:104} WARNING -  96%|#########5| 178M/186M [00:28<00:01, 6.19MB/s]
+[2023-07-12 06:21:15,709] {logging_mixin.py:104} WARNING -  96%|#########6| 180M/186M [00:28<00:00, 6.81MB/s]
+[2023-07-12 06:21:16,642] {logging_mixin.py:104} WARNING -  97%|#########7| 181M/186M [00:29<00:01, 3.92MB/s]
+[2023-07-12 06:21:16,750] {logging_mixin.py:104} WARNING -  99%|#########9| 185M/186M [00:29<00:00, 6.48MB/s]
+[2023-07-12 06:21:16,963] {logging_mixin.py:104} WARNING - 100%|##########| 186M/186M [00:29<00:00, 6.29MB/s]
+[2023-07-12 06:21:16,964] {logging_mixin.py:104} WARNING - 
+[2023-07-12 06:21:18,337] {taskinstance.py:1185} INFO - Marking task as SUCCESS. dag_id=online_payment_dag, task_id=download_from_gdrive, execution_date=20230712T062036, start_date=20230712T062044, end_date=20230712T062118
+[2023-07-12 06:21:18,646] {taskinstance.py:1246} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-07-12 06:21:18,688] {local_task_job.py:146} INFO - Task exited with return code 0

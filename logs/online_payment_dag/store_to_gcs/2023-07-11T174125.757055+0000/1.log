@@ -1,0 +1,23 @@
+[2023-07-11 17:42:32,672] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.store_to_gcs 2023-07-11T17:41:25.757055+00:00 [queued]>
+[2023-07-11 17:42:34,130] {taskinstance.py:877} INFO - Dependencies all met for <TaskInstance: online_payment_dag.store_to_gcs 2023-07-11T17:41:25.757055+00:00 [queued]>
+[2023-07-11 17:42:34,131] {taskinstance.py:1068} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-11 17:42:34,131] {taskinstance.py:1069} INFO - Starting attempt 1 of 1
+[2023-07-11 17:42:34,132] {taskinstance.py:1070} INFO - 
+--------------------------------------------------------------------------------
+[2023-07-11 17:42:34,671] {taskinstance.py:1089} INFO - Executing <Task(LocalFilesystemToGCSOperator): store_to_gcs> on 2023-07-11T17:41:25.757055+00:00
+[2023-07-11 17:42:34,677] {standard_task_runner.py:52} INFO - Started process 104 to run task
+[2023-07-11 17:42:34,681] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'online_payment_dag', 'store_to_gcs', '2023-07-11T17:41:25.757055+00:00', '--job-id', '25', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/online_payment_dag.py', '--cfg-path', '/tmp/tmp0_83ksui', '--error-file', '/tmp/tmpl8j09hg7']
+[2023-07-11 17:42:34,682] {standard_task_runner.py:77} INFO - Job 25: Subtask store_to_gcs
+[2023-07-11 17:42:35,399] {logging_mixin.py:104} INFO - Running <TaskInstance: online_payment_dag.store_to_gcs 2023-07-11T17:41:25.757055+00:00 [running]> on host 108192df2b59
+[2023-07-11 17:42:35,894] {taskinstance.py:1281} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=datokza@gmail.com
+AIRFLOW_CTX_DAG_OWNER=okza
+AIRFLOW_CTX_DAG_ID=online_payment_dag
+AIRFLOW_CTX_TASK_ID=store_to_gcs
+AIRFLOW_CTX_EXECUTION_DATE=2023-07-11T17:41:25.757055+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2023-07-11T17:41:25.757055+00:00
+[2023-07-11 17:42:36,510] {gcs.py:485} INFO - File /opt/airflow/data/extract_disaster_data.csv uploaded to extract_disaster_data.csv in airflowdf bucket
+[2023-07-11 17:42:36,864] {taskinstance.py:1185} INFO - Marking task as SUCCESS. dag_id=online_payment_dag, task_id=store_to_gcs, execution_date=20230711T174125, start_date=20230711T174232, end_date=20230711T174236
+[2023-07-11 17:42:37,066] {taskinstance.py:1246} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2023-07-11 17:42:37,105] {local_task_job.py:146} INFO - Task exited with return code 0
