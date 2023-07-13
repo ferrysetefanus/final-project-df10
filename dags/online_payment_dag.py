@@ -13,6 +13,9 @@ from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQue
 from airflow.models.variable import Variable
 from airflow.operators.python import PythonOperator
 import gdown
+from google.cloud import storage
+
+
 
 DATASET_ID = Variable.get("DATASET_ID")
 BASE_PATH = Variable.get("BASE_PATH")
@@ -22,6 +25,9 @@ BIGQUERY_TABLE_NAME = "online_payment"
 GCS_OBJECT_NAME = "online_payment.csv"
 DATA_PATH = f"{BASE_PATH}/data"
 OUT_PATH = f"{DATA_PATH}/{GCS_OBJECT_NAME}"
+
+storage.blob._DEFAULT_CHUNKSIZE = 5 * 1024* 1024  # 5 MB
+storage.blob._MAX_MULTIPART_SIZE = 5 * 1024* 1024  # 5 MB 
 
 @dag(
     default_args={
@@ -50,11 +56,10 @@ def online_payment_dag():
 
     @task()
     def extract_transform():
-      df = pd.read_csv(f"{DATA_PATH}/online_payment.csv", nrows=10)
+      df = pd.read_csv(f"{DATA_PATH}/online_payment.csv")
       columns = ['setp', 'type', 'amount', 'nameOrig', 'oldbalanceOrg', 'newbalanceOrig', 'nameDest', 'oldbalanceDest']
       df.to_csv(OUT_PATH, index=False, header=False)
-    
-    
+      
     start = DummyOperator(task_id='start')
     end = DummyOperator(task_id='end')
     download_from_gdrive_task = download_from_gdrive()
@@ -89,7 +94,9 @@ def online_payment_dag():
             {'name': 'isFlaggedFraud', 'type': 'INT64', 'mode': 'NULLABLE'},
         ], 
         autodetect=False,
-        write_disposition='WRITE_TRUNCATE', #If the table already exists - overwrites the table data
+        create_disposition='CREATE_IF_NEEDED',
+        write_disposition='WRITE_TRUNCATE',
+        source_format='CSV' #If the table already exists - overwrites the table data
     )
 
     start >> download_from_gdrive_task
